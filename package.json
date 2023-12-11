@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "flowbite": "^2.2.0",
+    "imask": "^7.1.3"
+  }
+}

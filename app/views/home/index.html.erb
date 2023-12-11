@@ -1,0 +1,231 @@
+<div data-controller="indexation">
+  <form data-indexation-target="inputForm" data-action="submit->indexation#onsubmit">
+    <div class="my-4 grid grid-cols-3 gap-4">
+      <div class="relative max-w-sm">
+        <label for="start_date" class="block text-lg font-medium leading-6 text-gray-900 dark:text-gray-300"><%= t('Contract_start_date')%></label>
+        <div class="relative mt-2 rounded-md shadow-sm">
+          <input type="date" required
+                 name="start_date"
+                 id="start_date"
+                 value="2010-09-01"
+                 class="block w-full rounded-md border-0
+               py-1.5 text-gray-900
+               ring-1 ring-inset ring-gray-300
+               placeholder:text-gray-400
+               focus:ring-2 focus:ring-inset
+               focus:ring-indigo-600
+               sm:text-lg sm:leading-10
+               invalid:bg-red-300"
+                 placeholder='<%= t("enter_start_date") %>'>
+        </div>
+      </div>
+      <div class="relative max-w-sm">
+        <label for="signed_date" class="block text-lg font-medium leading-6 text-gray-900 dark:text-gray-300"><%= t('contract_singed_on') %></label>
+        <div class="relative mt-2 rounded-md shadow-sm">
+          <input type="date" required
+                 name="signed_date"
+                 id="signed_date"
+                 value="2010-07-25"
+                 class="block w-full rounded-md border-0
+               py-1.5 text-gray-900
+               ring-1 ring-inset ring-gray-300
+               placeholder:text-gray-400
+               focus:ring-2 focus:ring-inset
+               focus:ring-indigo-600
+               sm:text-lg sm:leading-10
+               invalid:bg-red-300"
+                 placeholder='<%= t("enter_signed_date") %>'>
+        </div>
+      </div>
+      <div class="relative max-w-sm">
+        <label for="start_date" class="block text-lg font-medium leading-6 text-gray-900 dark:text-gray-300"><%= t('optional_current_date') %></label>
+        <p class="text-sm text-gray-900 dark:text-gray-300"><%= t("optional_help") %></p>
+        <div class="relative mt-2 rounded-md shadow-sm">
+          <input type="date"
+                 name="current_date"
+                 id="current_date"
+                 value="2020-01-01"
+                 class="block w-full rounded-md border-0
+               py-1.5 text-gray-900 dark:te
+               ring-1 ring-inset ring-gray-300
+               placeholder:text-gray-400
+               focus:ring-2 focus:ring-inset
+               focus:ring-indigo-600
+               sm:text-lg sm:leading-10
+               invalid:bg-red-300"
+                 placeholder='<%= t("enter_current_date") %>'>
+          <button class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-thin mt-2 px-5 py-1.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                  type="button" data-action="click->indexation#assignCurrentDate">Today</button>
+          <button class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-thin mt-2 px-5 py-1.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                  type="button" data-action="click->indexation#clearCurrentDate">Clear current date</button>
+        </div>
+      </div>
+      <div class="relative  max-w-sm" data-controller="currency" data-controller-pattern="">
+        <label for="base_rent" class="block text-lg font-medium leading-6 text-gray-900 dark:text-gray-300"><%= t('base_rent') %></label>
+        <div class="relative mt-2 rounded-md shadow-sm">
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <span data-currency-target="symbol" class="text-gray-500 sm:text-lg">€</span>
+          </div>
+          <input data-currency-target="source" type="text" min="0" required
+                 name="base_rent" id="base_rent"
+                 value="500"
+                 class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset
+               ring-gray-300 placeholder:text-gray-400
+               focus:ring-2 focus:ring-inset focus:ring-indigo-600
+               sm:text-lg sm:leading-6
+               invalid:bg-red-300"
+                 placeholder="0.00">
+          <div class="absolute inset-y-0 right-0 flex items-center">
+            <label for="base_rent_currency" class="sr-only"><%= t('currency') %></label>
+            <select
+              data-currency-target="selector"
+              data-action="change->currency#updatesymbol"
+              id="base_rent_currency" name="base_rent_currency" class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg">
+              <option>EUR</option>
+              <option>GBP</option>
+              <option>USD</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="mt-3 flex items-center justify-between">
+          <fieldset class="mt-3">
+            <label class="sr-only"><%= t('region') %></label>
+            <div class="flex grid grid-cols-3">
+              <div>
+                <input type="radio" id="region-choice-b" name="region" value="brussels" class="hidden peer" checked required>
+                <label for="region-choice-b"
+                       class="inline-flex items-center justify-between
+                    w-full p-3
+                    text-gray-500
+                    bg-white
+                    border border-gray-300
+                    rounded-lg cursor-pointer
+                    peer-checked:border-gray-600
+                    peer-checked:text-white
+                    peer-checked:bg-gray-600
+                    peer-checked:hover:bg-gray-300
+                    peer-checked:hover:border-gray-600
+                    peer-checked:hover:text-gray-500
+                    hover:text-gray-600
+                    hover:bg-gray-300
+                    invalid:bg-red-300">
+                  <div class="block">
+                    <div class=" text-lg upper"><%=t('brussels') %></div>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="region-choice-f" name="region" value="flanders" class="hidden peer" required>
+                <label for="region-choice-f"
+                       class="inline-flex items-center justify-between
+                    w-full p-3
+                    text-gray-500
+                    bg-white
+                    border border-gray-300
+                    rounded-lg cursor-pointer
+                    peer-checked:border-gray-600
+                    peer-checked:text-white
+                    peer-checked:bg-gray-600
+                    peer-checked:hover:bg-gray-300
+                    peer-checked:hover:border-gray-600
+                    peer-checked:hover:text-gray-500
+                    hover:text-gray-600
+                    hover:bg-gray-300
+                    invalid:bg-red-300">
+                  <div class="block">
+                    <div class=" text-lg upper"><%= t('flanders') %></div>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="region-choice-w" name="region" value="wallonia" class="hidden peer" required>
+                <label for="region-choice-w"
+                       class="inline-flex items-center justify-between
+                    w-full p-3
+                    text-gray-500
+                    bg-white
+                    border border-gray-300
+                    rounded-lg cursor-pointer
+                    peer-checked:border-gray-600
+                    peer-checked:text-white
+                    peer-checked:bg-gray-600
+                    peer-checked:hover:bg-gray-300
+                    peer-checked:hover:border-gray-600
+                    peer-checked:hover:text-gray-500
+                    hover:text-gray-600
+                    hover:bg-gray-300
+                    invalid:bg-red-300">
+                  <div class="block">
+                    <div class=" text-lg upper"><%= t('wallonia') %></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <button data-indexaction-target="submitBtn" data-action="click->indexation#onsubmit"
+              type="button"
+              class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-lg font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+        <%=t('compute_rent')%>
+      </button>
+      <p data-indexation-target="errorDetails" class="text-gray-900 dark:text-gray-300">
+
+      </p>
+    </div>
+
+    <!-- Result modal -->
+    <div id="result-modal" data-modal-backdrop="static" data-indexation-target="resultModal"
+         tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-gray-300 rounded-lg shadow dark:bg-gray-600">
+          <!-- Modal header -->
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+            <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+              <%= t('rent_result') %>
+            </h3>
+            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-lg w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="result-modal">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+              <span class="sr-only"><%= t('close_result') %></span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-4 md:p-5 space-y-4 txt-gray-800 dark:text-gray-300">
+            <p class="leading-relaxed text-xl">
+              <%= t('your_amounts') %> <span data-indexation-target="newRent" id="index_amount" class="font-extrabold dark:bg-gray-600">0.00</span>
+            </p>
+            <table style="width:80%">
+              <tr style="border-bottom: 3px solid white">
+                <td style="text-align: center; vertical-align: middle;" ><%= t('base_rent') %>
+                  (<span data-indexation-target="baseRent" id="base_rent_result" class="text-sm font-extralight">0.00</span>)
+                </td>
+                <td style="text-align: center; vertical-align: middle; width: 3em"><i class="fa-solid fa-xmark"></i>
+                </td>
+                <td style="text-align: center; vertical-align: middle;" class="dark: txt-white"><%= t('current_index') %>
+                  (<span data-indexation-target="currentIndex" id="current_index" class="text-sm">0.00</span>))
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" style="text-align: center; vertical-align: middle;" class="dark: txt-white">
+                  <%= t('base_index') %> (<span data-indexation-target="baseIndex" id="base_index" class="text-sm">0.00</span>)
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- Modal footer -->
+          <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <button data-modal-hide="result-modal"
+                    type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-lg font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

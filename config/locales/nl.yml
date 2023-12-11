@@ -1,0 +1,23 @@
+---
+nl:
+  Contract_start_date: Ingangsdatum van het contract
+  "Rent_Indexation": Huurindexatie
+  base_index: Basisindex
+  base_rent: Kale huurprijs
+  brussels: Brussel
+  close_result: Sluit resultaat
+  compute_rent: Geïndexeerde huur berekenen
+  contract_singed_on: Contract getekend op
+  currency: Valuta
+  current_index: Huidige index
+  enter_current_date: Voer de huidige datum in
+  enter_signed_date: Voer de datum in waarop het contract is ondertekend
+  enter_start_date: Voer de startdatum van het contract in
+  flanders: Vlaanderen
+  hello: Hallo
+  optional_current_date: Optionele huidige datum
+  optional_help: Gebruik dit om historische zoekopdrachten uit te voeren.
+  region: Regio
+  rent_result: Resultaat huurindexatie
+  wallonia: Wallonië
+  your_amounts: Uw geïndexeerde huurbedragen zijn

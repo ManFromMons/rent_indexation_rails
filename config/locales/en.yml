@@ -1,0 +1,23 @@
+---
+en:
+  Contract_start_date: Contract start date
+  "Rent_Indexation": Rent Indexation
+  base_index: Base Index
+  base_rent: Base rent
+  brussels: Brussels
+  close_result: Close result
+  compute_rent: Compute indexed rent
+  contract_singed_on: Contract signed on
+  currency: Currency
+  current_index: Current Index
+  enter_current_date: Enter current date
+  enter_signed_date: Enter date contract was signed on
+  enter_start_date: Enter contract start date
+  flanders: Flanders
+  hello: Hello world
+  optional_current_date: Optional current date
+  optional_help: Use this to do historical lookups.
+  region: Region
+  rent_result: Rent Indexation Result
+  wallonia: Wallonia
+  your_amounts: Your Indexed rent amounts are

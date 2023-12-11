@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://eu-central.storage.cloudconvert.com/tasks/c320b017-eb76-4091-a925-a37009781444/LogoSmovinColors.ico?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20231207%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20231207T023706Z&X-Amz-Expires=86400&X-Amz-Signature=69049ae3666c68e8523d7b45f30dc2b7fab56473715ddfa2c14a281430e6ac62&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22LogoSmovinColors.ico%22&response-content-type=image%2Fvnd.microsoft.icon&x-id=GetObject
