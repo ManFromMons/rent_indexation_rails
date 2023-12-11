@@ -1,13 +1,10 @@
-# Headingsmovin_indexation_rails
+# rent_indexation_rails
 
 This project provides the answer to the test requirements in a Rails project.
 
-> This is not the desired platform for a solution, there is a Sinatra
-> solution for this.
-
 The project uses `Ruby 3.2.0` and `Rails 7.1.2`.
 
-The Rails app, for the most part is a normal, vanilla Rails application.  It includes the API and a UI too.
+The Rails app, for the most part, is a normal, vanilla Rails application.  It includes the API and a UI too.
 
 ## The API
 The API is accessible on `/api/v1/indexations.` It will accept GET and POSTs on the above address.
